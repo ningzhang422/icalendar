@@ -170,6 +170,11 @@ module Icalendar
             next
           end
         else # If its not a component then it should be a property
+          # TODO explain the reason why
+          if name.start_with?("PATCH-")
+            next
+          end
+          
           params = fields[:params]
           value = fields[:value]
 
